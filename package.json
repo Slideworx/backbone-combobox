@@ -12,13 +12,10 @@
     "url": "git://github.com/SlideWorx/backbone-combobox"
   },
   "keywords": [
-    "backbone",
-    "tree",
-    "model",
-    "collection",
-    "structure",
-    "data",
-    "mixins"
+    "combobox",
+    "dropdown",
+    "component",
+    "backbone"
   ],
   "author": "SlideWorx (http://slideworx.com/)",
   "license": "MIT",
