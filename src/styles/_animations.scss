@@ -1,0 +1,72 @@
+// dropdown
+.c-combobox__dropdown--from-top {
+  animation: dropFromTop ease-out $combobox--animation-time;
+}
+
+.c-combobox__dropdown--from-bottom {
+  animation: dropFromBottom ease-out $combobox--animation-time;
+}
+
+.c-combobox__dropdown--from-left {
+  animation: dropFromLeft ease-out $combobox--animation-time;
+}
+
+.c-combobox__dropdown--from-right {
+  animation: dropFromRight ease-out $combobox--animation-time;
+}
+
+@keyframes dropFromTop {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0, -1em);
+  }
+
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes dropFromBottom {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0, 1em);
+  }
+
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes dropFromLeft {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-1em, 0);
+  }
+
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes dropFromRight {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(1em, 0);
+  }
+
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0);
+  }
+}

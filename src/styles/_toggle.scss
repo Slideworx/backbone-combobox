@@ -1,0 +1,98 @@
+.c-combobox__toggle {
+  cursor: pointer;
+  padding: .25em 1.5em .25em .5em;
+  background-color: $combobox--background-color;
+  border: $combobox--border;
+  position: relative;
+
+  .c-combobox__toggle-icon::after {
+    transition: border-top-color $combobox--animation-time;
+  }
+
+  &:hover {
+    border-color: darken($combobox--border-color, 10%);
+
+    .c-combobox__toggle-icon::after {
+      border-top-color: darken($combobox--border-color, 10%);
+    }
+  }
+
+  &.is-open {
+    border-color: darken($combobox--border-color, 10%);
+
+    .c-combobox__toggle-icon::after {
+      border-top-color: $combobox--item--color;
+    }
+  }
+
+  &.is-warning {
+    border-width: 1px;
+    border-color: $combobox--warning-color;
+  }
+
+  &.is-disabled {
+    cursor: default;
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  &.is-loading {
+    background-color: $combobox--background-color;
+    color: $combobox--border-color;
+    pointer-events: none;
+
+    .c-combobox__toggle-icon::after {
+      border-color: transparent;
+      border-width: 0;
+    }
+  }
+
+  &.has-error {
+    border-color: $combobox--error-color;
+    color: $combobox--error-color;
+
+    .c-combobox__toggle-icon::after {
+      border-top-color: transparentize($combobox--error-color, .5);
+    }
+
+    &:hover .c-combobox__toggle-icon::after {
+      border-top-color: transparentize($combobox--error-color, .3);
+    }
+
+    &.is-open .c-combobox__toggle-icon::after {
+      border-top-color: $combobox--error-color;
+    }
+  }
+}
+
+.c-combobox__text-wrapper {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.c-combobox__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.c-combobox__toggle-icon {
+  background: $combobox--background-color;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1.5em;
+
+  &::after {
+    border: .25em solid transparent;
+    border-bottom: .5em;
+    border-top: .5em solid $combobox--border-color;
+    content: '';
+    margin-top: -.25em;
+    position: absolute;
+    right: .5em;
+  }
+}

@@ -1,0 +1,14 @@
+$combobox--main-color: #FCC !default;
+$combobox--zindex: 1600 !default;
+$combobox--animation-time: 150ms !default;
+
+$combobox--max-items: 8;
+$combobox--item--color: #222 !default;
+$combobox--item--line-height: 1.2em;
+$combobox--warning-color: $combobox--main-color !default;
+$combobox--error-color: red !default;
+
+$combobox--background-color: white !default;
+$combobox--background-color--hover: $combobox--main-color !default;
+$combobox--border-color: #999 !default;
+$combobox--border: 1px solid $combobox--border-color !default;

@@ -1,0 +1,7 @@
+<% forEach(function (item, index) { %>
+  <li cid="<%= index %>"
+      title="<%- item.title %>"
+      class="c-combobox__item js-combobox__item <%- item.class %>">
+    <%= item.text %>
+  </li>
+<% }); %>
