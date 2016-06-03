@@ -1,5 +1,5 @@
-backbone-tree
-=============
+backbone-combobox
+================
 
 Backbone based Select component.
 
