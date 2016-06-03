@@ -1,8 +1,8 @@
 define(function(require, exports, module) {
   var Backbone = require('backbone');
   var _ = require('lodash');
-  var toggleTemplate = require('tpl!./comboboxView.ejs');
-  var dropdownTemplate = require('tpl!./dropdownView.ejs');
+  var toggleTemplate = _.template(require('text!./comboboxView.ejs'));
+  var dropdownTemplate = _.template(require('text!./dropdownView.ejs'));
   var DropdownView = require('./dropdownView');
   var classnames = require('classnames');
 

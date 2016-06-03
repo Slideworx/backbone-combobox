@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  background-color: #eef;
+  height: 100%;
+  margin: 20px;
+  padding: 0;
+}
+
+.container {
+  display: block;
+}
+
+.item {
+  width: 250px;
+  margin: 0 auto;
+}
