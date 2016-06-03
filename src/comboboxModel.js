@@ -141,7 +141,11 @@ define(function(require, exports, module) {
      * @param {boolean} remainOpen Should dropdown remain in the same open state after setting selected item.
      */
     selectItem: function(id, force, remainOpen) {
-      var item = this.findItem(id);
+      var item;
+
+      if (!!id) {
+        item = this.findItem(id);
+      }
 
       if (!item) {
         if (this.get('hasNotSelectedItem') === true) {
@@ -170,7 +174,9 @@ define(function(require, exports, module) {
         return this.getNotSelectedItem();
       }
 
-      return this.findItem(this.get('selectedId'));
+      if (this.get('selectedId')) {
+        return this.findItem(this.get('selectedId'));
+      }
     },
 
     getNotSelectedItem: function() {

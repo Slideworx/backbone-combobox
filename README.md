@@ -45,9 +45,14 @@ First of all: `npm install`
 
 Then to see example use of combobox please install `webpack-dev-server` and then run `npm run dev`.
 
+**Remember to check if test still passes before commit**.
+
 Please use [mversion](https://github.com/mikaelbr/mversion) (`npm install -g mversion`) to bump version numbers.
 
 ## Release History
+
+### 0.1.2 (03.06.2016)
+* Fixed and enabled tests under `npm test`
 
 ### 0.1.1 (03.06.2016)
 * Updated README.md

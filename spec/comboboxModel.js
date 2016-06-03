@@ -1,5 +1,5 @@
-import ComboboxModel from '../comboboxModel';
-import TreeCollection from 'collections/tree';
+import ComboboxModel from '../src/comboboxModel';
+import {Collection as TreeCollection} from 'backbone-tree';
 import Backbone from 'backbone';
 
 export default () => {
@@ -38,7 +38,9 @@ export default () => {
 
     describe(`should be able to call method`, () => {
       beforeEach(() => {
-        model = new ComboboxModel();
+        model = new ComboboxModel({
+          hasNotSelectedItem: true
+        });
         model.setData([
           {id: '1', text: 'first'},
           {id: '2', parentId: undefined, text: 'second'},
@@ -156,9 +158,10 @@ export default () => {
           });
 
           it(`shouldn't select disabled item (without passing force flag)`, () => {
-            model.selectItem(null);
-            model.selectItem('3.1');
+            model.selectItem();
+            expect(model.get('selectedId')).toEqual(null);
 
+            model.selectItem('3.1');
             expect(model.get('selectedId')).toEqual(null);
           });
 
@@ -251,6 +254,7 @@ export default () => {
 
         describe(`item hasn't been found`, () => {
           it(`should return undefined when hasNotSelectedItem is false`, () => {
+            model.selectItem();
             model.set('hasNotSelectedItem', false);
             expect(model.getSelectedItem()).toEqual(undefined);
           });
@@ -310,7 +314,7 @@ export default () => {
 
         describe(`when doesn't have selected item`, () => {
           beforeEach(() => {
-            model.selectItem(null);
+            model.selectItem();
           });
 
           describe(`and hasNotSelectedItem set to FALSE`, () => {
