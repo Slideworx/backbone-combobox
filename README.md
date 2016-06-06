@@ -43,13 +43,23 @@ view.render().$el.appendTo('#target');
 
 First of all: `npm install`
 
-Then to see example use of combobox please install `webpack-dev-server` and then run `npm run dev`.
+**(!) Generate `dist` versions by calling `webpack` in main directory**
+**(!) Remember to check if test still passes before commit**.
 
-**Remember to check if test still passes before commit**.
+building demo is temporary unavailable 
+~~Then to see example use of combobox please install `webpack-dev-server` and then run `npm run dev`.~~
 
-Please use [mversion](https://github.com/mikaelbr/mversion) (`npm install -g mversion`) to bump version numbers.
+Please use [mversion](https://github.com/mikaelbr/mversion) to bump version numbers eg. `mversion patch` to bump third number.
 
 ## Release History
+
+### 0.1.4 (06.06.2016)
+* temporary disabled building demo
+* `dist/` directory with bundle and vendors in separate files
+* `dist/style.css` is also built if you want to stick to default styles
+
+### 0.1.3 (03.06.2016)
+* Extracted dependencies from dev-dependencies
 
 ### 0.1.2 (03.06.2016)
 * Fixed and enabled tests under `npm test`

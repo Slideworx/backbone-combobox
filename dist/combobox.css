@@ -1,0 +1,193 @@
+.c-combobox__toggle {
+  cursor: pointer;
+  padding: .25em 1.5em .25em .5em;
+  background-color: white;
+  border: 1px solid #ccc;
+  position: relative; }
+  .c-combobox__toggle .c-combobox__toggle-icon::after {
+    transition: border-top-color 150ms; }
+  .c-combobox__toggle:hover {
+    border-color: #b3b3b3; }
+    .c-combobox__toggle:hover .c-combobox__toggle-icon::after {
+      border-top-color: #b3b3b3; }
+  .c-combobox__toggle.is-open {
+    border-color: #b3b3b3; }
+    .c-combobox__toggle.is-open .c-combobox__toggle-icon::after {
+      border-top-color: #555; }
+  .c-combobox__toggle.is-warning {
+    border-width: 1px;
+    border-color: #9a2330; }
+  .c-combobox__toggle.is-disabled {
+    cursor: default;
+    opacity: .5;
+    pointer-events: none; }
+  .c-combobox__toggle.is-loading {
+    background-color: white;
+    color: #ccc;
+    pointer-events: none; }
+    .c-combobox__toggle.is-loading .c-combobox__toggle-icon::after {
+      border-color: transparent;
+      border-width: 0; }
+  .c-combobox__toggle.has-error {
+    border-color: red;
+    color: red; }
+    .c-combobox__toggle.has-error .c-combobox__toggle-icon::after {
+      border-top-color: rgba(255, 0, 0, 0.5); }
+    .c-combobox__toggle.has-error:hover .c-combobox__toggle-icon::after {
+      border-top-color: rgba(255, 0, 0, 0.7); }
+    .c-combobox__toggle.has-error.is-open .c-combobox__toggle-icon::after {
+      border-top-color: red; }
+
+.c-combobox__text-wrapper {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+  text-align: left; }
+
+.c-combobox__text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
+
+.c-combobox__toggle-icon {
+  background: white;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  width: 1.5em; }
+  .c-combobox__toggle-icon::after {
+    border: .25em solid transparent;
+    border-bottom: .5em;
+    border-top: 0.5em solid #ccc;
+    content: '';
+    margin-top: -.25em;
+    position: absolute;
+    right: .5em; }
+
+.c-combobox__dropdown {
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: .25em;
+  box-sizing: border-box;
+  line-height: 1.1em;
+  margin: 0;
+  max-height: 13.6em;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding: 0;
+  position: absolute;
+  transform-origin: 50% 50%;
+  z-index: 1601; }
+
+.c-combobox__item {
+  background-color: white;
+  color: #555;
+  cursor: pointer;
+  min-width: 10em;
+  overflow: hidden;
+  padding: .25em .5em;
+  position: relative;
+  text-overflow: ellipsis;
+  transition: background-color 150ms;
+  user-select: none;
+  white-space: nowrap;
+  width: inherit; }
+  .c-combobox__item:hover, .c-combobox__item.is-selected-path:hover {
+    background-color: #9a2330;
+    color: #aaaaaa; }
+  .c-combobox__item.has-children {
+    padding-right: 1.5em; }
+    .c-combobox__item.has-children::after {
+      border: .25em solid transparent;
+      border-left: 0.5em solid #ccc;
+      border-right: .5em;
+      content: '';
+      margin-left: -.25em;
+      position: absolute;
+      right: .5em;
+      top: .5em; }
+    .c-combobox__item.has-children:hover::after {
+      border-left-color: #aaaaaa; }
+  .c-combobox__item.is-selected-path, .c-combobox__item.is-selected-path.is-not-selectable {
+    background-color: rgba(204, 204, 204, 0.1); }
+  .c-combobox__item.has-divider-after {
+    border-bottom: 1px solid #ccc; }
+  .c-combobox__item.has-divider-before {
+    border-top: 1px solid #ccc; }
+  .c-combobox__item.is-not-selectable {
+    background-color: white;
+    color: #ccc; }
+    .c-combobox__item.is-not-selectable:hover {
+      background-color: white;
+      color: #ccc;
+      cursor: default; }
+    .c-combobox__item.is-not-selectable:hover::after {
+      border-left-color: #ccc; }
+
+.c-combobox__dropdown--from-top {
+  animation: dropFromTop ease-out 150ms; }
+
+.c-combobox__dropdown--from-bottom {
+  animation: dropFromBottom ease-out 150ms; }
+
+.c-combobox__dropdown--from-left {
+  animation: dropFromLeft ease-out 150ms; }
+
+.c-combobox__dropdown--from-right {
+  animation: dropFromRight ease-out 150ms; }
+
+@keyframes dropFromTop {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0, -1em); }
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0); } }
+
+@keyframes dropFromBottom {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(0, 1em); }
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0); } }
+
+@keyframes dropFromLeft {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-1em, 0); }
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0); } }
+
+@keyframes dropFromRight {
+  0% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(1em, 0); }
+  100% {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0); } }
+
+.c-combobox.t-combobox--inline {
+  display: inline-block; }
+  .c-combobox.t-combobox--inline .c-combobox__toggle {
+    background-color: transparent;
+    border: 0;
+    display: inline-block;
+    padding-left: 0;
+    padding-right: 1em; }
+  .c-combobox.t-combobox--inline .c-combobox__toggle-icon::after {
+    right: 0; }
+  .c-combobox.t-combobox--inline .c-combobox__toggle.is-warning {
+    color: #9a2330; }
