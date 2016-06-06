@@ -1,4 +1,46 @@
-webpackJsonp([0],[
+define(["backbone","lodash","jquery","classnames"], function(__WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__, __WEBPACK_EXTERNAL_MODULE_11__, __WEBPACK_EXTERNAL_MODULE_12__) { return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			exports: {},
+/******/ 			id: moduleId,
+/******/ 			loaded: false
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(0);
+/******/ })
+/************************************************************************/
+/******/ ([
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -7,8 +49,8 @@ webpackJsonp([0],[
 
 	  module.exports = {
 	    View: __webpack_require__(5),
-	    Model: __webpack_require__(15),
-	    DropdownView: __webpack_require__(13)
+	    Model: __webpack_require__(13),
+	    DropdownView: __webpack_require__(10)
 	  };
 	}.call(exports, __webpack_require__, exports, module), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
 
@@ -28,11 +70,11 @@ webpackJsonp([0],[
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function(require, exports, module) {
 	  var Backbone = __webpack_require__(6);
-	  var _ = __webpack_require__(9);
-	  var toggleTemplate = _.template(__webpack_require__(11));
-	  var dropdownTemplate = _.template(__webpack_require__(12));
-	  var DropdownView = __webpack_require__(13);
-	  var classnames = __webpack_require__(14);
+	  var _ = __webpack_require__(7);
+	  var toggleTemplate = _.template(__webpack_require__(8));
+	  var dropdownTemplate = _.template(__webpack_require__(9));
+	  var DropdownView = __webpack_require__(10);
+	  var classnames = __webpack_require__(12);
 
 	// properties of model which changes causes call of render function
 	  var renderProperties = ['selectedId', 'isDisabled', 'isLoading', 'isOpen', 'theme', 'isWarning', 'hasError'];
@@ -129,31 +171,38 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 6 */,
-/* 7 */,
-/* 8 */,
-/* 9 */,
-/* 10 */,
-/* 11 */
+/* 6 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
+
+/***/ },
+/* 7 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_7__;
+
+/***/ },
+/* 8 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"c-combobox__toggle js-combobox__toggle <%- classNames %>\">\r\n  <div class=\"c-combobox__text-wrapper\">\r\n    <% if (typeof selected !== 'undefined') { %>\r\n      <% if (typeof selected.get('icon') !== 'undefined') { %><i class=\"<%- selected.get('icon') %>\"></i><% } %>\r\n      <span class=\"c-combobox__text\"><%= label %></span>\r\n    <% } else { %>\r\n      <!-- Nothing has been selected -->\r\n      &nbsp;\r\n    <% } %>\r\n  </div>\r\n  <i class=\"c-combobox__toggle-icon\"></i>\r\n</div>\r\n"
 
 /***/ },
-/* 12 */
+/* 9 */
 /***/ function(module, exports) {
 
 	module.exports = "<% forEach(function (item, index) { %>\r\n  <li cid=\"<%= index %>\"\r\n      title=\"<%- item.title %>\"\r\n      class=\"c-combobox__item js-combobox__item <%- item.class %>\">\r\n    <%= item.text %>\r\n  </li>\r\n<% }); %>\r\n"
 
 /***/ },
-/* 13 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function(require, exports, module) {
 	  var Backbone = __webpack_require__(6);
-	  var $ = __webpack_require__(8);
-	  var _ = __webpack_require__(9);
-	  var classnames = __webpack_require__(14);
+	  var $ = __webpack_require__(11);
+	  var _ = __webpack_require__(7);
+	  var classnames = __webpack_require__(12);
 
 	  var WINDOW = $(window);
 	  var DOCUMENT = $(document);
@@ -449,14 +498,25 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 14 */,
-/* 15 */
+/* 11 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_11__;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_12__;
+
+/***/ },
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_RESULT__;!(__WEBPACK_AMD_DEFINE_RESULT__ = function(require, exports, module) {
 	  var Backbone = __webpack_require__(6);
-	  var _ = __webpack_require__(9);
-	  var TreeCollection = __webpack_require__(16).Collection;
+	  var _ = __webpack_require__(7);
+	  var TreeCollection = __webpack_require__(14).Collection;
 
 	  var VALIDATE = {validate: true};
 	  var validateMsgTmpl = _.template(
@@ -672,18 +732,18 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 16 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = {
-	  Mixins: __webpack_require__(17),
-	  Model: __webpack_require__(18),
-	  Collection: __webpack_require__(19)
+	  Mixins: __webpack_require__(15),
+	  Model: __webpack_require__(16),
+	  Collection: __webpack_require__(17)
 	};
 
 
 /***/ },
-/* 17 */
+/* 15 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -692,7 +752,7 @@ webpackJsonp([0],[
 	 * Provides useful mixins which can be applied to Backbone.Model and used within Collection.
 	 */
 
-	var _ = __webpack_require__(9);
+	var _ = __webpack_require__(7);
 
 	module.exports = {
 	  treeNodeId: 'id',
@@ -781,11 +841,11 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 18 */
+/* 16 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Backbone = __webpack_require__(6);
-	var treeMixins = __webpack_require__(17);
+	var treeMixins = __webpack_require__(15);
 
 	module.exports = Backbone.Model
 	  .extend(treeMixins)
@@ -798,11 +858,11 @@ webpackJsonp([0],[
 
 
 /***/ },
-/* 19 */
+/* 17 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var Backbone = __webpack_require__(6);
-	var TreeModel = __webpack_require__(18);
+	var TreeModel = __webpack_require__(16);
 
 	module.exports = Backbone.Collection.extend({
 	  model: TreeModel,
@@ -811,4 +871,4 @@ webpackJsonp([0],[
 
 
 /***/ }
-]);
+/******/ ])});;

@@ -17,6 +17,13 @@ More info soon...
 
 ## Usage
 
+First, be sure that your require can resolve dependencies defined in `package.json`:
+
+* `jquery`
+* `lodash`
+* `backbone`
+* `classnames`
+
 ```js
 var Combobox = require('backbone-combobox');
 
@@ -52,6 +59,9 @@ building demo is temporary unavailable
 Please use [mversion](https://github.com/mikaelbr/mversion) to bump version numbers eg. `mversion patch` to bump third number.
 
 ## Release History
+
+### 0.1.5 (06.06.2016)
+* build dist without external libraries. You have to care about requiring them!
 
 ### 0.1.4 (06.06.2016)
 * temporary disabled building demo
