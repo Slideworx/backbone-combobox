@@ -7,7 +7,7 @@ define(function(require, exports, module) {
   var classnames = require('classnames');
 
 // properties of model which changes causes call of render function
-  var renderProperties = ['selectedId', 'isDisabled', 'isLoading', 'isOpen', 'theme', 'isWarning', 'hasError'];
+  var renderProperties = ['selectedId', 'isDisabled', 'isLoading', 'theme', 'isWarning', 'hasError'];
 
   module.exports = Backbone.View.extend({
     toggleTemplate: toggleTemplate,
