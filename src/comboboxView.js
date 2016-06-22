@@ -26,6 +26,7 @@ define(function(require, exports, module) {
         .listenTo(this.model, 'change:isOpen', this.toggleDropDown)
         .listenTo(this.model, 'change:' + renderProperties.join(' change:'), this.render)
         .listenTo(this.model.getData(), 'reset', this.render)
+        .listenTo(this.model, 'change-combobox-toggle-classes', this.updateComboboxToggleClasses);
     },
 
     toggleDropDown: function(model, isOpen) {
@@ -37,23 +38,9 @@ define(function(require, exports, module) {
     },
 
     render: function() {
-      var classes = {
-        'is-disabled': this.model.get('isDisabled'),
-        'is-open': this.model.get('isOpen'),
-        'is-loading': this.model.get('isLoading'),
-        'is-warning': this.model.get('isWarning'),
-        'has-error': this.model.get('hasError')
-      };
+      var classes = this.model.getComboboxToggleClasses();
 
-      if (!!this.model.get('theme')) {
-        this.$el.addClass('t-combobox--' + this.model.get('theme'));
-      } else {
-        // removes all found theme classes
-        // this.$el.removeClass(function(index, css) {
-        //   return (css.match() || []).join(' ');
-        // });
-        this.el.setAttribute('class', this.el.getAttribute('class').replace(/\bt-combobox--\S+/g, ''));
-      }
+      this.updateTheme();
 
       var selectedItem = this.model.getSelectedItem();
 
@@ -66,6 +53,27 @@ define(function(require, exports, module) {
       );
 
       return this;
+    },
+
+    updateComboboxToggleClasses: function(model) {
+      var classes = this.model.getComboboxToggleClasses();
+      var classesToRemove = Object.keys(classes).join(' ');
+      var classesToAdd = classnames(classes);
+
+      this.$('.js-combobox__toggle').removeClass(classesToRemove);
+      this.$('.js-combobox__toggle').addClass(classesToAdd);
+    },
+
+    updateTheme: function() {
+      if (!!this.model.get('theme')) {
+        this.$el.addClass('t-combobox--' + this.model.get('theme'));
+      } else {
+        // removes all found theme classes
+        // this.$el.removeClass(function(index, css) {
+        //   return (css.match() || []).join(' ');
+        // });
+        this.el.setAttribute('class', this.el.getAttribute('class').replace(/\bt-combobox--\S+/g, ''));
+      }
     },
 
     toggle: function(e) {
