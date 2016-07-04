@@ -51,6 +51,9 @@ define(function(require, exports, module) {
 
       // listen to change on disabled property
       this.listenTo(this, 'change:isDisabled change:isLoading', this.closeDropdownWhenTrue);
+
+      //propagate styling properties change
+      this.listenTo(this, 'change:isDisabled change:isOpen change:isLoading change:isWarning change:hasError', this.notifyAboutComboboxToggleClassesChange);
     },
 
     /* @TODO move to provider */
@@ -89,6 +92,10 @@ define(function(require, exports, module) {
       }
 
       this.set(newProps, VALIDATE);
+    },
+
+    notifyAboutComboboxToggleClassesChange: function() {
+      this.trigger('change-combobox-toggle-classes');
     },
 
     getLabel: function() {
@@ -211,6 +218,16 @@ define(function(require, exports, module) {
       this.set({
         isOpen: typeof forceValue === 'undefined' ? !this.get('isOpen') : !!forceValue
       }, VALIDATE);
-    }
+    },
+
+    getComboboxToggleClasses: function() {
+      return {
+        'is-disabled': this.get('isDisabled'),
+        'is-open': this.get('isOpen'),
+        'is-loading': this.get('isLoading'),
+        'is-warning': this.get('isWarning'),
+        'has-error': this.get('hasError')
+      };
+    },
   });
 });
