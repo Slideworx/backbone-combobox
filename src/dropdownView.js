@@ -158,6 +158,7 @@ define(function(require, exports, module) {
       if (this.first) {
         WINDOW.off('.combobox');
         DOCUMENT.off('.combobox');
+        BODY[0].removeEventListener('click', this.captureClickOnBodyHandler, true);
       }
 
       if (this._dropdownView) {
