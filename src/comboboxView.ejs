@@ -1,8 +1,8 @@
 <div class="c-combobox__toggle js-combobox__toggle <%- classNames %>">
   <div class="c-combobox__text-wrapper">
-    <% if (typeof selected !== 'undefined') { %>
-      <% if (typeof selected.get('icon') !== 'undefined') { %><i class="<%- selected.get('icon') %>"></i><% } %>
-      <span class="c-combobox__text"><%= label %></span>
+    <% if (typeof model.getSelectedItem() !== 'undefined') { %>
+      <% if (typeof model.getSelectedItem().get('icon') !== 'undefined') { %><i class="<%- model.getSelectedItem().get('icon') %>"></i><% } %>
+      <span class="c-combobox__text"><%= model.getLabel() %></span>
     <% } else { %>
       <!-- Nothing has been selected -->
       &nbsp;

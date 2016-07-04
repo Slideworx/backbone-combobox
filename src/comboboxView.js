@@ -55,13 +55,10 @@ define(function(require, exports, module) {
         this.el.setAttribute('class', this.el.getAttribute('class').replace(/\bt-combobox--\S+/g, ''));
       }
 
-      var selectedItem = this.model.getSelectedItem();
-
       this.$el.html(
         this.toggleTemplate({
           classNames: classnames(classes),
-          selected: selectedItem,
-          label: this.model.getLabel()
+          model: this.model
         })
       );
 
