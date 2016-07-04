@@ -92,6 +92,11 @@ define(function(require, exports, module) {
       if (this._dropdownView) {
         this._dropdownView.remove();
       }
-    }
+    },
+
+    remove: function() {
+      this.removeDropdown();
+      Backbone.View.prototype.remove.call(this);
+    },
   });
 });
